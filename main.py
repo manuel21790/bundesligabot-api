@@ -9,9 +9,9 @@ def home():
 
 @app.route("/tipps")
 def tipps():
-    return jsonify({
-        "text": "🚀 31. Spieltag – 1. Bundesliga (25.–27. April 2025)\n\n🏟 Fr: Stuttgart vs. Heidenheim ➡️ 3:1\n📖 Sa: Bayern vs. Mainz ➡️ 3:0\n📅 So: Bremen vs. St. Pauli ➡️ 2:0"
-    })
+    import requests
+    res = requests.get("https://bundesligabot-content.vercel.app/spieltag.json")
+    return res.json()
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
