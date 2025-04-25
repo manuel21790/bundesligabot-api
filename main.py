@@ -14,5 +14,5 @@ def tipps():
     return res.json()
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
+    port = int(os.environ.get("PORT", 5000))  # 💡 Das ist der Render-Weg!
     app.run(host="0.0.0.0", port=port)
